@@ -61,6 +61,7 @@
 		6528981228732DE400BF4F63 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		652898142874E1FB00BF4F63 /* AdicionaItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdicionaItemViewController.swift; sourceTree = "<group>"; };
 		65289816287622AE00BF4F63 /* Alerta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerta.swift; sourceTree = "<group>"; };
+		65289818287F389700BF4F63 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +92,7 @@
 		652897C92873256800BF4F63 = {
 			isa = PBXGroup;
 			children = (
+				65289818287F389700BF4F63 /* MyPlayground.playground */,
 				652897D42873256800BF4F63 /* EggplantBrownie */,
 				6528980F28732CEC00BF4F63 /* LaunchScreen */,
 				6528980E28732CBE00BF4F63 /* Resources */,

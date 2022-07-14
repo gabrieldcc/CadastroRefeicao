@@ -23,8 +23,8 @@ class AdicionaItemViewController: UIViewController {
     @IBOutlet weak var caloriasItemTextField: UITextField!
     
     @IBAction func addItem(_ sender: UIButton) {
-        guard let nome = nomeItemTextField.text, let calorias = caloriasItemTextField.text, let caloriasDouble = Double(calorias) else {return}
-        let item = Item(nome: nome, calorias: caloriasDouble)
+        guard let nome = nomeItemTextField.text, let calorias = caloriasItemTextField.text, let caloriasInt = Int(calorias) else {return}
+        let item = Item(nome: nome, calorias: caloriasInt)
         delegate?.addItem(item)
         limpaTextFields()
         navigationController?.popViewController(animated: true)

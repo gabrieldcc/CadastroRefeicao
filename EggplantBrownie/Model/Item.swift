@@ -10,9 +10,9 @@ import UIKit
 class Item: NSObject {
     
     var nome: String
-    var calorias: Double
+    var calorias: Int
     
-    init(nome: String, calorias: Double) {
+    init(nome: String, calorias: Int) {
         self.nome = nome
         self.calorias = calorias
     }

@@ -39,6 +39,7 @@ final class AdicionaRefeicaoViewController: UIViewController, AdicionaItemDelega
         
     }
     
+    //MARK: Funcs
     func addItem(_ item: Item) {
         itens.append(item)
         tableView.reloadData()
@@ -50,10 +51,14 @@ final class AdicionaRefeicaoViewController: UIViewController, AdicionaItemDelega
             if let indexPath = tableView.indexPath(for: celula) {
                 let item = itens[indexPath.row]
                 print("\(item.nome)")
-                Alerta(self).show(title: "\(item.nome)", message: "Sua quantidade de calorias é \(item.calorias)")
+                Alerta(self).show(title: "\(item.nome)", message: "A quantidade de calorias é \(item.calorias)", handler: { alert in
+                    self.itens.remove(at: indexPath.row)
+                    self.tableView.reloadData()
+                })
             }
     }
 }
+    
     
     //MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -75,10 +80,11 @@ extension AdicionaRefeicaoViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
         let nomeDoItem = itens[indexPath.row].nome
+        let itemSelecionado = itens[indexPath.row]
+        let position = itens.firstIndex(of: itemSelecionado)
         cell.textLabel?.text = "\(nomeDoItem)"
         
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(exibeAlerta))
-        //longPress.state = .began
         cell.addGestureRecognizer(longPress)
         
         return cell
@@ -103,4 +109,3 @@ extension AdicionaRefeicaoViewController: UITableViewDataSource {
         }
     }
 }
-

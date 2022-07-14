@@ -15,15 +15,16 @@ class Alerta: NSObject {
         self.controller = controller
     }
     
-    func show(title: String, message: String) {
+    func show(title: String, message: String, handler: @escaping (UIAlertAction) -> Void) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let buttonDelete = UIAlertAction(title: "Deletar", style: .default, handler: nil)
-        let buttonCancel = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
+        let buttonDelete = UIAlertAction(title: "Deletar", style: .destructive, handler: handler)
+        let buttonCancel = UIAlertAction(title: "Cancelar", style: .cancel)
         alert.addAction(buttonDelete)
         alert.addAction(buttonCancel)
         controller.present(alert, animated: true, completion: nil)
     }
+    
+ 
+
 }
-
-
 
